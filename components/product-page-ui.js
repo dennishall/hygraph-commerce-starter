@@ -15,7 +15,7 @@ function ProductPageUI({ product }) {
   const { activeCurrency } = useSettingsContext()
   const [variantQuantity, setVariantQuantity] = React.useState(1)
   const [activeVariantId, setActiveVariantId] = React.useState(
-    router.query.variantId || product.variants[0].id
+    router.query.variantId || product.variants?.[0].id || product.id
   )
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ function ProductPageUI({ product }) {
     router.replace(url, url, { shallow: true })
   }, [activeVariantId])
 
-  const activeVariant = product.variants.find(
+  const activeVariant = product.variants?.find(
     (variant) => variant.id === activeVariantId
   )
   const updateQuantity = (event) =>
