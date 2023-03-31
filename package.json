@@ -7,6 +7,10 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
   "dependencies": {
     "@hookform/resolvers": "1.3.0",
     "@stripe/stripe-js": "^1.13.0",
